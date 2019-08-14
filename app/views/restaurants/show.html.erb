@@ -1,0 +1,30 @@
+<%= render 'navbar' %>
+
+<div class="container">
+
+  <h2> <%= @restaurant.name %> </h2>
+
+  <div class="row">
+    Address : <%= @restaurant.address %>
+  </div>
+
+  <div class="row">
+    Phone : <%= @restaurant.phone_number %>
+  </div>
+
+  <div class="row">
+    Category : <%= @restaurant.category %>
+  </div>
+
+  <div class="row">
+    <%= link_to "Write a review", new_restaurant_review_path(@restaurant.id) %>
+  </div>
+
+  <ul>
+    <% @restaurant.reviews.each do |review| %>
+      <li>
+        <%= review.content %>
+      </li>
+    <% end %>
+  </ul>
+</div>

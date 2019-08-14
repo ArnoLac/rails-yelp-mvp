@@ -1,0 +1,42 @@
+<%= render 'navbar' %>
+
+<div class="container">
+      <div class="row">
+        <div class="col-2">
+          <strong>Name</strong>
+        </div>
+        <div class="col-5">
+          <strong>Address</strong>
+        </div>
+        <div class="col-2">
+          <strong>Phone Number</strong>
+        </div>
+        <div class="col-2">
+          <strong>Category</strong>
+        </div>
+        <div class="col-1">
+          <strong>Details</strong>
+        </div>
+      </div>
+    <% @restaurants.each do |restaurant| %>
+      <div class="row">
+        <div class="col-2">
+          <%= restaurant.name %>
+        </div>
+        <div class="col-5">
+          <%= restaurant.address %>
+        </div>
+        <div class="col-2">
+          <%= restaurant.phone_number %>
+        </div>
+        <div class="col-2">
+          <%= restaurant.category %>
+        </div>
+        <div class="col-1">
+          <%= link_to "Go", restaurant_path(restaurant.id) %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+
